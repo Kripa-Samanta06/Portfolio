@@ -59,5 +59,20 @@ npm run preview
 
 ---
 
+## 🌐 Deployment to Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FKripa-Samanta06%2FPortfolio)
+
+### Option 1: 1-Click Dashboard Deployment (Recommended)
+1. Go to [vercel.com/new](https://vercel.com/new).
+2. Select **Import** next to your repository (`Kripa-Samanta06/Portfolio`).
+3. Vercel automatically detects the **Vite** preset:
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
+4. Click **Deploy**. Your site will be live within ~60 seconds with a free `.vercel.app` domain and automatic SSL!
+
+---
+
 ## 📄 License
 This project is licensed under the MIT License.
