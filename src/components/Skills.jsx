@@ -80,34 +80,27 @@ export default function Skills() {
               {portfolioData.skills.languages.map((lang, idx) => (
                 <div
                   key={idx}
-                  className="glass-card p-5 rounded-2xl border-white/5 hover:border-cyan-400/40 group"
+                  className="glass-card p-5 rounded-2xl border-white/5 hover:border-cyan-400/40 flex items-center justify-between group"
                   onMouseEnter={() => soundEffects.playHover()}
                 >
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex items-center gap-3">
-                      <div 
-                        className="w-10 h-10 rounded-xl flex items-center justify-center font-mono font-bold text-sm"
-                        style={{ backgroundColor: `${lang.color}15`, color: lang.color }}
-                      >
-                        {lang.name.slice(0, 2).toUpperCase()}
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-white group-hover:text-cyan-300 transition-colors">
-                          {lang.name}
-                        </h4>
-                        <span className="text-[11px] font-mono text-slate-400">{lang.tag}</span>
-                      </div>
+                  <div className="flex items-center gap-3">
+                    <div 
+                      className="w-10 h-10 rounded-xl flex items-center justify-center font-mono font-bold text-sm shrink-0"
+                      style={{ backgroundColor: `${lang.color}15`, color: lang.color }}
+                    >
+                      {lang.name.slice(0, 2).toUpperCase()}
                     </div>
-                    <span className="font-mono text-xs text-cyan-400 font-semibold">{lang.level}%</span>
+                    <div>
+                      <h4 className="font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        {lang.name}
+                      </h4>
+                      <span className="text-[11px] font-mono text-slate-400">{lang.tag}</span>
+                    </div>
                   </div>
-
-                  {/* Level progress bar */}
-                  <div className="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
-                    <div
-                      className="h-full rounded-full transition-all duration-1000 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:from-cyan-400 group-hover:to-purple-500"
-                      style={{ width: `${lang.level}%` }}
-                    />
-                  </div>
+                  <span 
+                    className="w-2 h-2 rounded-full opacity-60 group-hover:opacity-100 transition-opacity"
+                    style={{ backgroundColor: lang.color }}
+                  />
                 </div>
               ))}
             </div>
@@ -125,26 +118,21 @@ export default function Skills() {
               {portfolioData.skills.frameworks.map((fw, idx) => (
                 <div
                   key={idx}
-                  className="glass-card p-5 rounded-2xl border-white/5 hover:border-purple-400/40 group"
+                  className="glass-card p-5 rounded-2xl border-white/5 hover:border-purple-400/40 group flex flex-col justify-between"
                   onMouseEnter={() => soundEffects.playHover()}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
-                      {fw.category}
-                    </span>
-                    <span className="font-mono text-xs text-purple-400 font-semibold">{fw.level}%</span>
-                  </div>
-                  <h4 className="text-base font-bold text-white group-hover:text-purple-300 transition-colors mb-1">
-                    {fw.name}
-                  </h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    {fw.desc}
-                  </p>
-                  <div className="w-full bg-dark-800 rounded-full h-1 mt-4">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500"
-                      style={{ width: `${fw.level}%` }}
-                    />
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">
+                        {fw.category}
+                      </span>
+                    </div>
+                    <h4 className="text-base font-bold text-white group-hover:text-purple-300 transition-colors mb-1">
+                      {fw.name}
+                    </h4>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      {fw.desc}
+                    </p>
                   </div>
                 </div>
               ))}
